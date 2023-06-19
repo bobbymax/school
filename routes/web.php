@@ -20,8 +20,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+Route::get('clearance/access/fee', 'DashboardController@clearance')->name('access.fee');
 Route::resource('students', 'StudentController');
 Route::resource('departments', 'DepartmentController');
 Route::resource('levels', 'LevelController');
 Route::resource('programs', 'ProgramController');
+Route::resource('clearances', 'ClearanceController');
+Route::resource('complains', 'ComplainController');
+

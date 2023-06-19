@@ -18,6 +18,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $guarded = [''];
+    protected $with = ['clearances'];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -49,8 +50,18 @@ class User extends Authenticatable
         return $this->belongsTo(Level::class, 'level_id');
     }
 
-    public function program(): \Illuminate\Database\Eloquent\Relations\HasOne
+    public function program(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->hasOne(Program::class);
+        return $this->belongsTo(Program::class, 'program_id');
+    }
+
+    public function clearances(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Clearance::class);
+    }
+
+    public function complains(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Complain::class);
     }
 }

@@ -45,9 +45,10 @@ class StudentController extends Controller
             'department_id' => 'required|integer',
             'program_id' => 'required|integer',
             'email' => 'required|string|max:255|unique:users',
+            'mobile' => 'required|string|max:11|unique:users'
         ]);
 
-        $student = User::create([
+        User::create([
             'firstname' => $request->firstname,
             'surname' => $request->surname,
             'middlename' => $request->middlename,
@@ -57,6 +58,7 @@ class StudentController extends Controller
             'program_id' => $request->program_id,
             'email' => $request->email,
             'password' => Hash::make('password'),
+            'mobile' => $request->mobile
         ]);
 
         return redirect()->route('students.index');
