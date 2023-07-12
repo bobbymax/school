@@ -21,6 +21,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('clearance/access/fee', 'DashboardController@clearance')->name('access.fee');
+Route::get('clearance/{type}', 'DashboardController@checkers')->name('check.clearance');
 Route::resource('students', 'StudentController');
 Route::resource('departments', 'DepartmentController');
 Route::resource('levels', 'LevelController');

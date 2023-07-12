@@ -64,11 +64,11 @@
                 </div>
                 <div class="card-body">
                     <a class="payment__bttns" href="{{ route('access.fee') }}">Pay Clearance Access Fee</a>
-                    <a class="payment__bttns" href="#">Print Results</a>
-                    <a class="payment__bttns" href="#">Hostel Clearance</a>
-                    <a class="payment__bttns" href="#">Clinic Clearance</a>
+                    <a class="payment__bttns" href="{{ route('check.clearance', 'result') }}">Print Results</a>
+                    <a class="payment__bttns" href="{{ route('check.clearance', 'hostel') }}">Hostel Clearance</a>
+                    <a class="payment__bttns" href="{{ route('check.clearance', 'clinic') }}">Clinic Clearance</a>
                     <a class="payment__bttns" href="#">Busary Clearance</a>
-                    <a class="payment__bttns" href="#">College Clearance</a>
+                    <a class="payment__bttns" href="{{ route('check.clearance', 'college') }}">College Clearance</a>
                     <a class="payment__bttns" href="#">Library Clearance</a>
                 </div>
             </div>
