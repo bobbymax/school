@@ -6,7 +6,6 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-{{--                        {{$type}}--}}
                         @php
                             $header = match ($type) {
                                 'result' => ['title' => 'Print Result', 'sub' => ''],
@@ -26,7 +25,7 @@
                                     <tr>
                                         <td>{{ $level->key }}</td>
                                         <td>
-                                            <button type="button" disabled class="btn btn-primary">{{ $status }}</button>
+                                            <button type="button"  class="btn btn-primary">{{ $status }}</button>
                                         </td>
                                     </tr>
                                 @endforeach
